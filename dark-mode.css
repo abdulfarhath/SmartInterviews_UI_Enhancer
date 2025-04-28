@@ -1,0 +1,124 @@
+/* SmartInterviews Focused Dark Mode CSS */
+
+/* Only target specific background and text color combinations */
+.si-dark-mode {
+    color-scheme: dark;
+  }
+  
+  /* Base elements - only change light backgrounds to dark and dark text to light */
+  .si-dark-mode body,
+  .si-dark-mode html {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Main containers - only applying to elements that typically have white backgrounds */
+  .si-dark-mode div[style*="background-color: #fff"],
+  .si-dark-mode div[style*="background-color: white"],
+  .si-dark-mode div[style*="background-color: #ffffff"],
+  .si-dark-mode div[style*="background: white"],
+  .si-dark-mode div[style*="background: #fff"],
+  .si-dark-mode div[style*="background: #ffffff"],
+  .si-dark-mode section[style*="background-color: #fff"],
+  .si-dark-mode article[style*="background-color: #fff"],
+  .si-dark-mode main[style*="background-color: #fff"] {
+    background-color: #121212 !important;
+  }
+  
+  /* Ensure text on dark backgrounds is visible */
+  .si-dark-mode div[style*="background-color: #121212"] *,
+  .si-dark-mode div[style*="background-color: #1e1e1e"] *,
+  .si-dark-mode div[style*="background-color: #252525"] *,
+  .si-dark-mode div[style*="background-color: #2d2d2d"] *,
+  .si-dark-mode div[style*="background-color: #333"] * {
+    color: #e0e0e0 !important;
+  }
+  
+  /* Cards, panels, and content boxes */
+  .si-dark-mode .card,
+  .si-dark-mode .panel,
+  .si-dark-mode .box,
+  .si-dark-mode .container,
+  .si-dark-mode .problem-card,
+  .si-dark-mode .problem-container,
+  .si-dark-mode .question-card,
+  .si-dark-mode .content-box {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+  }
+  
+  /* Form elements */
+  .si-dark-mode input[type="text"],
+  .si-dark-mode input[type="password"],
+  .si-dark-mode input[type="email"],
+  .si-dark-mode input[type="number"],
+  .si-dark-mode input[type="search"],
+  .si-dark-mode textarea,
+  .si-dark-mode select,
+  .si-dark-mode .form-control {
+    background-color: #333 !important;
+    color: #e0e0e0 !important;
+    border-color: #555 !important;
+  }
+  
+  /* Tables */
+  .si-dark-mode table,
+  .si-dark-mode .table {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+  }
+  
+  .si-dark-mode th,
+  .si-dark-mode td {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Code blocks and editors */
+  .si-dark-mode pre,
+  .si-dark-mode code,
+  .si-dark-mode .code-block,
+  .si-dark-mode .ace_editor,
+  .si-dark-mode .code-editor,
+  .si-dark-mode .editor-container,
+  .si-editor-dark {
+    background-color: #2b2b2b !important;
+    color: #e0e0e0 !important;
+  }
+  
+  .si-dark-mode .ace_gutter,
+  .si-editor-dark .ace_gutter {
+    background-color: #363636 !important;
+    color: #858585 !important;
+  }
+  
+  /* Problem statement and question description */
+  .si-dark-mode .problem-statement,
+  .si-dark-mode .question-description,
+  .si-dark-mode .problem-description {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Scrollbars */
+  .si-dark-mode ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .si-dark-mode ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+  
+  .si-dark-mode ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 6px;
+    border: 3px solid #1e1e1e;
+  }
+  
+  /* Make sure links remain visible */
+  .si-dark-mode a,
+  .si-dark-mode a:visited {
+    color: #66b2ff !important;
+  }

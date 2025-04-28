@@ -1,20 +1,21 @@
 {
-    "manifest_version": 3,
-    "name": "SmartInterviews UI Enhancer",
-    "description": "Improves the UI of hive.smartinterviews.in and smartinterviews.in websites",
-    "version": "1.0",
-    "permissions": ["storage", "activeTab"],
-    "host_permissions": [
-      "*://*.smartinterviews.in/*"
-    ],
-    "action": {
-      "default_popup": "popup.html"
-    },
-    "content_scripts": [
-      {
-        "matches": ["*://*.smartinterviews.in/*"],
-        "js": ["content.js"],
-        "css": ["styles.css"]
-      }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "SmartInterviews Dark Mode",
+  "version": "1.0",
+  "description": "Adds dark mode to SmartInterviews websites",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.smartinterviews.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.smartinterviews.in/*"],
+      "js": ["content.js"],
+      "css": ["dark-mode.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

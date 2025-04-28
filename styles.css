@@ -1,134 +1,242 @@
-/* styles.css - Custom styles for SmartInterviews UI enhancement */
+/* SmartInterviews Dark Mode - CSS Styles */
 
-/* Dark Mode Styles */
+/* CSS Variables for customization */
+:root {
+  --si-brightness: 100%;
+  --si-contrast: 100%;
+  --si-sepia: 0%;
+  --si-grayscale: 0%;
+  
+  /* Dark mode colors */
+  --si-bg-primary: #121212;
+  --si-bg-secondary: #1e1e1e;
+  --si-bg-tertiary: #252525;
+  --si-text-primary: #e0e0e0;
+  --si-text-secondary: #bbbbbb;
+  --si-border: #444444;
+  --si-link: #4dabf7;
+  --si-button-bg: #2d2d2d;
+  --si-button-text: #e0e0e0;
+  --si-input-bg: #333333;
+  --si-code-bg: #2b2b2b;
+  --si-success: #388e3c;
+  --si-warning: #f57c00;
+  --si-error: #d32f2f;
+  --si-highlight: rgba(255, 255, 255, 0.05);
+}
+
+/* Main dark mode styles */
 .si-dark-mode {
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
-  }
-  
-  .si-dark-mode .navbar,
-  .si-dark-mode .header,
-  .si-dark-mode .footer,
-  .si-dark-mode .sidebar {
-    background-color: #252525 !important;
-    color: #e0e0e0 !important;
-  }
-  
-  .si-dark-mode .card,
-  .si-dark-mode .panel,
-  .si-dark-mode .problem-card,
-  .si-dark-mode .container {
-    background-color: #2d2d2d !important;
-    color: #e0e0e0 !important;
-    border-color: #444 !important;
-  }
-  
-  .si-dark-mode input, 
-  .si-dark-mode select, 
-  .si-dark-mode textarea {
-    background-color: #333 !important;
-    color: #e0e0e0 !important;
-    border-color: #555 !important;
-  }
-  
-  .si-dark-mode a {
-    color: #4dabf7 !important;
-  }
-  
-  .si-dark-mode button,
-  .si-dark-mode .btn {
-    background-color: #444 !important;
-    color: #e0e0e0 !important;
-    border-color: #666 !important;
-  }
-  
-  .si-dark-mode pre, 
-  .si-dark-mode code {
-    background-color: #2b2b2b !important;
-    color: #e0e0e0 !important;
-  }
-  
-  /* Split Screen Layout */
-  .si-split-container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-  
-  .si-split-container > div {
-    overflow: auto;
-    padding: 10px;
-  }
-  
-  /* Bookmark Button Styles */
-  .si-bookmark-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #f8c517;
-    z-index: 10;
-  }
-  
-  .si-bookmark-btn:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Enhanced Timer Styles */
-  .si-timer-wrapper {
-    position: relative;
-    padding: 5px;
-    border-radius: 4px;
-    background-color: #f5f5f5;
-    display: inline-block;
-    margin: 5px;
-  }
-  
-  .si-dark-mode .si-timer-wrapper {
-    background-color: #333;
-  }
-  
-  .si-timer-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: green;
-  }
-  
-  .si-timer-urgent {
-    animation: pulse 1s infinite;
-  }
-  
-  @keyframes pulse {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /* General UI Improvements */
-  .code-editor, .editor-container {
-    font-family: 'Courier New', monospace;
-  }
-  
-  /* Add responsive improvements for smaller screens */
-  @media (max-width: 768px) {
-    .si-split-container {
-      flex-direction: column;
-    }
-    
-    .si-split-container > div {
-      width: 100% !important;
-      height: 50%;
-    }
-  }
+  filter: brightness(var(--si-brightness)) contrast(var(--si-contrast)) sepia(var(--si-sepia)) grayscale(var(--si-grayscale));
+}
+
+/* Base elements */
+.si-dark-mode body,
+.si-dark-mode html {
+  background-color: var(--si-bg-primary) !important;
+  color: var(--si-text-primary) !important;
+}
+
+/* Common UI components */
+.si-dark-mode div,
+.si-dark-mode section,
+.si-dark-mode aside,
+.si-dark-mode main {
+  background-color: var(--si-bg-primary) !important;
+  color: var(--si-text-primary) !important;
+}
+
+/* Headers and navigation */
+.si-dark-mode header,
+.si-dark-mode nav,
+.si-dark-mode .navbar,
+.si-dark-mode .header,
+.si-dark-mode .top-bar,
+.si-dark-mode .menu {
+  background-color: var(--si-bg-tertiary) !important;
+  color: var(--si-text-primary) !important;
+  border-color: var(--si-border) !important;
+}
+
+/* Containers */
+.si-dark-mode .container,
+.si-dark-mode .card,
+.si-dark-mode .panel,
+.si-dark-mode .box,
+.si-dark-mode .problem-card,
+.si-dark-mode .question-card,
+.si-dark-mode .problem-container,
+.si-dark-mode .content-box {
+  background-color: var(--si-bg-secondary) !important;
+  color: var(--si-text-primary) !important;
+  border-color: var(--si-border) !important;
+}
+
+/* Form elements */
+.si-dark-mode input,
+.si-dark-mode select,
+.si-dark-mode textarea,
+.si-dark-mode .form-control {
+  background-color: var(--si-input-bg) !important;
+  color: var(--si-text-primary) !important;
+  border-color: var(--si-border) !important;
+}
+
+/* Buttons */
+.si-dark-mode button,
+.si-dark-mode .btn,
+.si-dark-mode .button {
+  background-color: var(--si-button-bg) !important;
+  color: var(--si-button-text) !important;
+  border-color: var(--si-border) !important;
+}
+
+.si-dark-mode button:hover,
+.si-dark-mode .btn:hover,
+.si-dark-mode .button:hover {
+  background-color: var(--si-bg-tertiary) !important;
+  filter: brightness(1.2);
+}
+
+/* Links */
+.si-dark-mode a,
+.si-dark-mode .link {
+  color: var(--si-link) !important;
+}
+
+/* Tables */
+.si-dark-mode table,
+.si-dark-mode th,
+.si-dark-mode td {
+  background-color: var(--si-bg-secondary) !important;
+  color: var(--si-text-primary) !important;
+  border-color: var(--si-border) !important;
+}
+
+.si-dark-mode tr:nth-child(odd) {
+  background-color: var(--si-bg-primary) !important;
+}
+
+.si-dark-mode tr:nth-child(even) {
+  background-color: var(--si-bg-secondary) !important;
+}
+
+/* Code areas */
+.si-dark-mode pre,
+.si-dark-mode code,
+.si-dark-mode .code-block,
+.si-dark-mode .ace_editor,
+.si-dark-mode .editor-container,
+.si-dark-mode .monaco-editor {
+  background-color: var(--si-code-bg) !important;
+  color: var(--si-text-primary) !important;
+}
+
+/* Scrollbars */
+.si-dark-mode ::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.si-dark-mode ::-webkit-scrollbar-track {
+  background: var(--si-bg-primary);
+}
+
+.si-dark-mode ::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 7px;
+  border: 3px solid var(--si-bg-primary);
+}
+
+.si-dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Status indicators */
+.si-dark-mode .success,
+.si-dark-mode .accepted {
+  color: var(--si-success) !important;
+}
+
+.si-dark-mode .warning,
+.si-dark-mode .partial {
+  color: var(--si-warning) !important;
+}
+
+.si-dark-mode .error,
+.si-dark-mode .failed,
+.si-dark-mode .wrong {
+  color: var(--si-error) !important;
+}
+
+/* Specific site elements */
+.si-dark-mode .problem-statement,
+.si-dark-mode .question-description {
+  background-color: var(--si-bg-secondary) !important;
+  color: var(--si-text-primary) !important;
+  padding: 15px !important;
+  border-radius: 4px !important;
+}
+
+.si-dark-mode .problem-header,
+.si-dark-mode .question-header {
+  border-bottom: 1px solid var(--si-border) !important;
+}
+
+/* Code editor overrides */
+.si-dark-mode .ace_gutter {
+  background-color: var(--si-bg-tertiary) !important;
+  color: var(--si-text-secondary) !important;
+}
+
+.si-dark-mode .ace_active-line {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.si-dark-mode .ace_cursor {
+  color: #fff !important;
+}
+
+/* Highlighted elements */
+.si-dark-mode .highlighted,
+.si-dark-mode .selected,
+.si-dark-mode .active {
+  background-color: var(--si-highlight) !important;
+}
+
+/* Modal dialogs */
+.si-dark-mode .modal,
+.si-dark-mode .dialog,
+.si-dark-mode .popup {
+  background-color: var(--si-bg-secondary) !important;
+  color: var(--si-text-primary) !important;
+  border-color: var(--si-border) !important;
+}
+
+.si-dark-mode .modal-header,
+.si-dark-mode .dialog-header,
+.si-dark-mode .popup-header {
+  background-color: var(--si-bg-tertiary) !important;
+  border-bottom: 1px solid var(--si-border) !important;
+}
+
+.si-dark-mode .modal-footer,
+.si-dark-mode .dialog-footer,
+.si-dark-mode .popup-footer {
+  background-color: var(--si-bg-tertiary) !important;
+  border-top: 1px solid var(--si-border) !important;
+}
+
+/* Images - slightly reduce brightness */
+.si-dark-mode img {
+  filter: brightness(0.9);
+}
+
+/* Override any !important inline styles */
+body.si-dark-mode [style*="background-color"] {
+  background-color: var(--si-bg-secondary) !important;
+}
+
+body.si-dark-mode [style*="color"] {
+  color: var(--si-text-primary) !important;
+}
