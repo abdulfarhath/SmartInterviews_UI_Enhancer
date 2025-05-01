@@ -2,20 +2,13 @@
   "manifest_version": 3,
   "name": "SmartInterviews Dark Mode",
   "version": "1.0",
-  "description": "Adds dark mode to SmartInterviews websites",
-  "permissions": ["storage"],
-  "host_permissions": [
-    "*://*.smartinterviews.in/*"
-  ],
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "description": "Applies a custom dark mode and UI tweaks to smartinterviews.in",
   "content_scripts": [
     {
-      "matches": ["*://*.smartinterviews.in/*"],
+      "matches": ["https://hive.smartinterviews.in/*"],
       "js": ["content.js"],
-      "css": ["dark-mode.css"],
-      "run_at": "document_start"
+      "css": ["darkmode.css"]
     }
-  ]
+  ],
+  "permissions": []
 }
